@@ -298,6 +298,8 @@ export const education = [
     },
 ];
 
+// src/data/portfolioData.js
+
 export const projects = [
     {
         id: 1,
@@ -311,10 +313,11 @@ export const projects = [
             "Supabase Edge Functions"
         ],
         category: "AI Mobile App",
-        github: "https://github.com/yourusername/keepsake-ai",
-        live: "https://apps.apple.com/us/iphone/search?term=keepsake.ai",
-        playStore: "https://play.google.com/store/apps/details?id=app.keepsake&hl=en_IN",
         featured: true,
+        links: {
+            appStore: "https://apps.apple.com/in/iphone/search?term=keepsake.ai",
+            playStore: "https://play.google.com/store/apps/details?id=app.keepsake&hl=en_IN",
+        }
     },
     {
         id: 2,
@@ -329,10 +332,11 @@ export const projects = [
             "ChatGPT Assistant"
         ],
         category: "AI Mobile App",
-        github: "https://github.com/yourusername/mustard",
-        live: "https://apps.apple.com/in/app/mustard-rewards-points/id6739942835",
-        playStore: "https://play.google.com/store/apps/details?id=com.mustard",
         featured: true,
+        links: {
+            appStore: "https://apps.apple.com/in/app/mustard-rewards-points/id6739942835",
+            playStore: "https://play.google.com/store/apps/details?id=com.mustard",
+        }
     },
     {
         id: 3,
@@ -345,9 +349,10 @@ export const projects = [
             "Firebase"
         ],
         category: "Mobile App",
-        github: "https://github.com/yourusername/just-talking",
-        live: "https://apps.apple.com/us/app/just-talking/id6744893778",
         featured: true,
+        links: {
+            appStore: "https://apps.apple.com/us/app/just-talking/id6744893778",
+        }
     },
     {
         id: 4,
@@ -362,10 +367,11 @@ export const projects = [
             "RevenueCat"
         ],
         category: "AI Mobile App",
-        github: "https://github.com/yourusername/fortaleza-espiritual",
-        live: "https://apps.apple.com/us/app/fortaleza-espiritual/id6578428093",
-        playStore: "https://play.google.com/store/apps/details?id=com.fortalezaespiritual.chat&hl=en",
         featured: true,
+        links: {
+            appStore: "https://apps.apple.com/us/app/fortaleza-espiritual/id6578428093",
+            playStore: "https://play.google.com/store/apps/details?id=com.fortalezaespiritual.chat&hl=en",
+        }
     },
     {
         id: 5,
@@ -380,9 +386,8 @@ export const projects = [
             "BuildShip"
         ],
         category: "AI Mobile App",
-        github: "https://github.com/yourusername/orbigo-travel-ai",
-        live: "https://your-live-demo-url.com",
         featured: true,
+        links: {}
     },
     {
         id: 6,
@@ -397,9 +402,10 @@ export const projects = [
             "Dart"
         ],
         category: "Full Stack",
-        github: "https://github.com/mohitkushwah12/To-Do-List-With-Notification",
-        live: "https://example.com",
         featured: false,
+        links: {
+            github: "https://github.com/mohitkushwah12/To-Do-List-With-Notification",
+        }
     },
     {
         id: 7,
@@ -415,9 +421,8 @@ export const projects = [
             "MySQL"
         ],
         category: "Full Stack",
-        github: "https://github.com/yourusername/e-commerce-platform",
-        live: "https://your-live-demo-url.com",
         featured: false,
+        links: {}
     },
     {
         id: 8,
@@ -425,11 +430,16 @@ export const projects = [
         description: "A modern web-based e-book management system for browsing, organizing, and managing digital books efficiently.",
         longDescription: "Developed a full-stack E-Book Management System with secure user authentication, book catalog management, advanced search and filtering, category management, user profiles, and an intuitive admin dashboard for managing books and users. The application provides a responsive and user-friendly experience across all devices.",
         image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600",
-        technologies: ["Java", "Spring Boot", "Angular", "MySQL", "Swagger"],
+        technologies: [
+            "Java",
+            "Spring Boot",
+            "Angular",
+            "MySQL",
+            "Swagger"
+        ],
         category: "Full Stack",
-        github: "https://github.com/yourusername/e-book-management-system",
-        live: "https://your-live-demo-url.com",
         featured: false,
+        links: {}
     },
 ];
 

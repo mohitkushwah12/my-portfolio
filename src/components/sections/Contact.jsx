@@ -2,9 +2,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
 import { personalInfo, socialLinks } from '../../data/portfolioData';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
+
+const EMAILJS_CONFIG = {
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+};
 
 const Contact = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -24,11 +31,7 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate sending (Replace with actual emailjs or API)
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-
-        toast.success('Message sent successfully! I\'ll get back to you soon. 🚀', {
-            duration: 5000,
+        const loadingToast = toast.loading('Sending your message...', {
             style: {
                 background: '#1E1E2E',
                 color: '#fff',
@@ -36,14 +39,70 @@ const Contact = () => {
             },
         });
 
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setIsSubmitting(false);
+        try {
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                subject: formData.subject,
+                message: formData.message,
+                to_email: 'dev.mohitkushwah@gmail.com',
+                reply_to: formData.email,
+            };
+
+            await emailjs.send(
+                EMAILJS_CONFIG.serviceId,
+                EMAILJS_CONFIG.templateId,
+                templateParams,
+                EMAILJS_CONFIG.publicKey
+            );
+
+            toast.dismiss(loadingToast);
+            toast.success("Message sent successfully! I'll get back to you soon. 🚀", {
+                duration: 5000,
+                style: {
+                    background: '#1E1E2E',
+                    color: '#fff',
+                    border: '1px solid rgba(108, 99, 255, 0.3)',
+                },
+            });
+
+            setFormData({ name: '', email: '', subject: '', message: '' });
+
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            toast.dismiss(loadingToast);
+            toast.error('Failed to send message. Please try again!', {
+                duration: 5000,
+                style: {
+                    background: '#1E1E2E',
+                    color: '#fff',
+                    border: '1px solid rgba(255, 99, 99, 0.3)',
+                },
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const contactInfo = [
-        { icon: FaEnvelope, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-        { icon: FaPhone, label: "Phone", value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-        { icon: FaMapMarkerAlt, label: "Location", value: personalInfo.location, href: "#" },
+        {
+            icon: FaEnvelope,
+            label: "Email",
+            value: personalInfo.email,
+            href: `mailto:${personalInfo.email}`
+        },
+        {
+            icon: FaPhone,
+            label: "Phone",
+            value: personalInfo.phone,
+            href: `tel:${personalInfo.phone}`
+        },
+        {
+            icon: FaMapMarkerAlt,
+            label: "Location",
+            value: personalInfo.location,
+            href: "#"
+        },
     ];
 
     return (
@@ -68,7 +127,8 @@ const Contact = () => {
                         Let's Work <span className="gradient-text">Together</span>
                     </h2>
                     <p className="dark:text-gray-400 text-gray-500 max-w-2xl mx-auto">
-                        Have a project in mind or want to discuss an opportunity? I'd love to hear from you!
+                        Have a project in mind or want to discuss an opportunity?
+                        I'd love to hear from you!
                     </p>
                 </motion.div>
 
@@ -150,7 +210,10 @@ const Contact = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="lg:col-span-3"
                     >
-                        <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 space-y-6">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="glass-card rounded-3xl p-8 space-y-6"
+                        >
                             <div className="grid sm:grid-cols-2 gap-6">
                                 {/* Name */}
                                 <div>
@@ -224,13 +287,17 @@ const Contact = () => {
                                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                                 className={`w-full btn-primary flex items-center justify-center gap-2 text-lg
-                  ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                    ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                             >
                                 {isSubmitting ? (
                                     <>
                                         <motion.div
                                             animate={{ rotate: 360 }}
-                                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                                            transition={{
+                                                duration: 1,
+                                                repeat: Infinity,
+                                                ease: 'linear'
+                                            }}
                                             className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
                                         />
                                         Sending...
