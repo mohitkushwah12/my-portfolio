@@ -13,7 +13,7 @@ import {
 } from 'react-icons/hi';
 import { TbBrandOpenai, TbApi } from 'react-icons/tb';
 import { RiFlutterFill, RiOpenaiFill } from 'react-icons/ri';
-// ============== YAHAN APNA DATA DALO ==============
+
 
 export const personalInfo = {
     name: "Mohit Kushwah",
@@ -306,7 +306,7 @@ export const projects = [
         title: "Keepsake.ai",
         description: "An AI-powered companion app for meaningful conversations, memory recall, focus support, and personal growth.",
         longDescription: "Developed Keepsake.ai using FlutterFlow, Supabase, and Supabase Edge Functions to deliver an intelligent AI companion experience. The app features contextual memory, personalized AI conversations, body doubling sessions for improved focus, secure authentication, real-time data synchronization, and scalable backend logic powered by Edge Functions.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600",
+        image: "/images/keepsake.webp",
         technologies: [
             "FlutterFlow",
             "Supabase",
@@ -324,7 +324,7 @@ export const projects = [
         title: "Mustard",
         description: "An AI-powered rewards and loyalty application that helps users earn, track, and redeem reward points effortlessly.",
         longDescription: "Developed Mustard using FlutterFlow, Firebase, OpenAI, and ChatGPT Assistant to provide a smart rewards platform. The application enables users to earn and manage loyalty points, receive AI-powered assistance, track rewards in real time, and enjoy a seamless, user-friendly experience across mobile devices.",
-        image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=600",
+        image: "/images/Mustard.webp",
         technologies: [
             "FlutterFlow",
             "Firebase",
@@ -359,7 +359,7 @@ export const projects = [
         title: "Fortaleza Espiritual (Chat with Bible)",
         description: "An AI-powered Bible companion that provides scripture-based conversations, daily inspiration, and spiritual guidance.",
         longDescription: "Developed Fortaleza Espiritual using FlutterFlow, Firebase, RevenueCat, and OpenAI to create an interactive AI Bible assistant. The app enables users to chat about biblical topics, receive scripture-based answers, explore daily devotionals, and manage premium subscriptions through RevenueCat, delivering a personalized and engaging spiritual experience.",
-        image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=600",
+        image: "/images/Fortaleza Espiritual.webp",
         technologies: [
             "FlutterFlow",
             "Firebase",
@@ -378,7 +378,7 @@ export const projects = [
         title: "Orbigo Travel AI",
         description: "An AI-powered travel planning application that helps users discover destinations, create personalized itineraries, and manage trips effortlessly.",
         longDescription: "Developed Orbigo Travel AI using FlutterFlow, Firebase, OpenAI, and BuildShip to deliver intelligent travel recommendations and personalized trip planning. The application features AI-powered itinerary generation, destination suggestions, user authentication, cloud data storage, and a seamless, responsive user experience.",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600",
+        image: "/images/Orbigo Travel AI.avif",
         technologies: [
             "FlutterFlow",
             "Firebase",
@@ -386,7 +386,7 @@ export const projects = [
             "BuildShip"
         ],
         category: "AI Mobile App",
-        featured: true,
+        featured: false,
         links: {}
     },
     {
@@ -412,7 +412,7 @@ export const projects = [
         title: "E-Commerce Platform",
         description: "A full-stack e-commerce web application with secure authentication, product management, and online shopping features.",
         longDescription: "Developed a responsive E-Commerce Platform that allows users to browse products, manage shopping carts, place orders, and securely authenticate. The application includes an admin panel for product and category management, order processing, and customer management, providing a seamless shopping experience.",
-        image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600",
+        image: "/images/E-Commerce Platform.jpeg",
         technologies: [
             "Spring Boot",
             "Angular",
@@ -429,7 +429,7 @@ export const projects = [
         title: "E-Book Management System",
         description: "A modern web-based e-book management system for browsing, organizing, and managing digital books efficiently.",
         longDescription: "Developed a full-stack E-Book Management System with secure user authentication, book catalog management, advanced search and filtering, category management, user profiles, and an intuitive admin dashboard for managing books and users. The application provides a responsive and user-friendly experience across all devices.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600",
+        image: "/images/E-Book Management System.webp",
         technologies: [
             "Java",
             "Spring Boot",
