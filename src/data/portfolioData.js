@@ -298,8 +298,6 @@ export const education = [
     },
 ];
 
-// src/data/portfolioData.js
-
 export const projects = [
     {
         id: 1,

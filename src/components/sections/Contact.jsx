@@ -8,10 +8,13 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/f
 import toast, { Toaster } from 'react-hot-toast';
 
 const EMAILJS_CONFIG = {
-    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+    templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
 };
+
+// Debug ke liye (baad me hata dena)
+console.log('EmailJS Config:', EMAILJS_CONFIG);
 
 const Contact = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -113,7 +116,6 @@ const Contact = () => {
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full filter blur-3xl" />
 
             <div className="container-custom relative z-10" ref={ref}>
-                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -133,7 +135,6 @@ const Contact = () => {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-5 gap-12">
-                    {/* Left - Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -150,7 +151,6 @@ const Contact = () => {
                             </p>
                         </div>
 
-                        {/* Contact Cards */}
                         <div className="space-y-4">
                             {contactInfo.map((info, index) => (
                                 <motion.a
@@ -177,7 +177,6 @@ const Contact = () => {
                             ))}
                         </div>
 
-                        {/* Social Links */}
                         <div>
                             <p className="dark:text-gray-400 text-gray-500 text-sm font-medium mb-4">
                                 Follow me on social media:
@@ -203,7 +202,6 @@ const Contact = () => {
                         </div>
                     </motion.div>
 
-                    {/* Right - Contact Form */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -215,7 +213,6 @@ const Contact = () => {
                             className="glass-card rounded-3xl p-8 space-y-6"
                         >
                             <div className="grid sm:grid-cols-2 gap-6">
-                                {/* Name */}
                                 <div>
                                     <label className="block dark:text-gray-300 text-gray-600 text-sm font-medium mb-2">
                                         Your Name *
@@ -231,7 +228,6 @@ const Contact = () => {
                                     />
                                 </div>
 
-                                {/* Email */}
                                 <div>
                                     <label className="block dark:text-gray-300 text-gray-600 text-sm font-medium mb-2">
                                         Your Email *
@@ -248,7 +244,6 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            {/* Subject */}
                             <div>
                                 <label className="block dark:text-gray-300 text-gray-600 text-sm font-medium mb-2">
                                     Subject *
@@ -264,7 +259,6 @@ const Contact = () => {
                                 />
                             </div>
 
-                            {/* Message */}
                             <div>
                                 <label className="block dark:text-gray-300 text-gray-600 text-sm font-medium mb-2">
                                     Message *
@@ -280,7 +274,6 @@ const Contact = () => {
                                 />
                             </div>
 
-                            {/* Submit Button */}
                             <motion.button
                                 type="submit"
                                 disabled={isSubmitting}

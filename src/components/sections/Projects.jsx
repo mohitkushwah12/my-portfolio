@@ -11,7 +11,6 @@ import {
     FaApple
 } from 'react-icons/fa';
 
-// ✅ Link types config - icon, label, color sab ek jagah
 const LINK_CONFIG = {
     github: {
         icon: FaGithub,
@@ -65,7 +64,6 @@ const ProjectCard = ({ project, index }) => {
                         transition={{ duration: 0.6 }}
                     />
 
-                    {/* ✅ Hover Overlay with Dynamic Links */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: isHovered ? 1 : 0 }}
@@ -94,7 +92,6 @@ const ProjectCard = ({ project, index }) => {
                                     >
                                         <IconComponent size={18} />
 
-                                        {/* ✅ Tooltip */}
                                         <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-dark-200 text-white text-[10px] rounded-md opacity-0 group-hover/link:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                                             {config.label}
                                         </span>
@@ -104,7 +101,6 @@ const ProjectCard = ({ project, index }) => {
                         </div>
                     </motion.div>
 
-                    {/* Featured Badge */}
                     {project.featured && (
                         <div className="absolute top-3 right-3">
                             <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-500/90 text-yellow-900 text-xs font-bold">
@@ -114,7 +110,6 @@ const ProjectCard = ({ project, index }) => {
                         </div>
                     )}
 
-                    {/* Category Badge */}
                     <div className="absolute top-3 left-3">
                         <span className="px-3 py-1 rounded-full glass-card text-xs font-semibold text-white">
                             {project.category}
@@ -148,7 +143,6 @@ const ProjectCard = ({ project, index }) => {
                         )}
                     </div>
 
-                    {/* ✅ Bottom Links - Always Visible */}
                     <div className="flex items-center gap-2 pt-4 border-t border-gray-200/10">
                         {availableLinks.map(([type, url]) => {
                             const config = LINK_CONFIG[type];
