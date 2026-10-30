@@ -21,7 +21,7 @@ export const personalInfo = {
     lastName: "Kushwah",
     title: "Full Stack Developer",
     tagline: "Turning Ideas into Digital Reality",
-    description: "I'm a passionate Full Stack Developer with 3+ years of experience in building modern, responsive, and user-friendly web applications. I specialize in React, Node.js, and modern web technologies.",
+    description: "I'm a passionate Full Stack Developer with 2+ years of experience in building modern, responsive, and user-friendly web applications. I specialize in React, Node.js, and modern web technologies.",
     shortBio: "A creative developer who loves to build beautiful and functional web applications that make a difference.",
     email: "dev.mohitkushwah@gmail.com",
     phone: "+91 8435951261",
@@ -54,7 +54,7 @@ export const navLinks = [
 export const stats = [
     { number: 10, suffix: "+", label: "Projects Completed" },
     { number: 5, suffix: "+", label: "Happy Clients" },
-    { number: 1.5, suffix: "+", label: "Years Experience" },
+    { number: 2, suffix: "+", label: "Years Experience" },
     { number: 20, suffix: "+", label: "Technologies" },
 ];
 
@@ -315,6 +315,25 @@ export const projects = [
         links: {
             appStore: "https://apps.apple.com/in/iphone/search?term=keepsake.ai",
             playStore: "https://play.google.com/store/apps/details?id=app.keepsake&hl=en_IN",
+        }
+    },
+    {
+        id: 3,
+        title: "GoKartz",
+        description: "A service marketplace connecting clients with skilled freelancers for home decor, DJ services, videography, photography, and other professional services.",
+        longDescription: "Developed GoKartz using FlutterFlow and Firebase to create a seamless service booking marketplace with two distinct roles: Clients and Freelancers. The application allows clients to discover service providers, explore service categories, review freelancer profiles, submit booking requests, approve proposals, and securely manage payments. Freelancers can create service listings, manage bookings, accept or decline requests, submit proposals, track earnings, and receive payouts. The platform also features Stripe Connect payment integration, booking status tracking, project completion confirmation with digital signatures, reviews and ratings, notifications, and a streamlined workflow for managing services from booking to completion.",
+        image: "/images/Gokartz.png",
+        technologies: [
+            "FlutterFlow",
+            "Firebase",
+            "Stripe Connect",
+            "Firebase Cloud Messaging",
+            "Firebase Notification"
+        ],
+        category: "Service Marketplace App",
+        featured: true,
+        links: {
+            appStore: "https://apps.apple.com/us/app/gokartz/id6736412776"
         }
     },
     {

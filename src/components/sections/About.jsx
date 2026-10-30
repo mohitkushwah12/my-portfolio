@@ -68,7 +68,7 @@ const About = () => {
                                 className="absolute -bottom-6 -right-6 glass-card-solid rounded-2xl p-6 shadow-2xl"
                             >
                                 <div className="text-center">
-                                    <span className="text-4xl font-bold gradient-text">3+</span>
+                                    <span className="text-4xl font-bold gradient-text">2+</span>
                                     <p className="dark:text-gray-300 text-gray-600 text-sm font-medium mt-1">
                                         Years Experience
                                     </p>
